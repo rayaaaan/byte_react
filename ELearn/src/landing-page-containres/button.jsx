@@ -1,17 +1,17 @@
-function Button({ text, icone, clas, position, img_class }) {
+function Button({ text, icone, clas, position, img_class, type }) {
   if (!icone) {
-    return <button className={`button ${clas}`}>{text}</button>;
+    return <button type={type} className={`button ${clas}`}>{text}</button>;
   }
   if (position === "left") {
     return (
-      <button className={`button ${clas}`}>
+      <button type={type} className={`button ${clas}`}>
         <img src={icone} className="button_image" />
         {text}
       </button>
     );
   }
   return (
-    <button className={`button ${clas}`}>
+    <button type={type} className={`button ${clas}`} >
       {text} <img src={icone} className={`button_image ${img_class}`} />
     </button>
   );

@@ -30,7 +30,9 @@ function LeftSide() {
           style={{
             backgroundColor:
               activeButton === "button1"
-                ? "#5271FF"
+                ? IsHover === "button1"
+                  ? "#4063fc"
+                  : "#5271FF"
                 : IsHover === "button1"
                 ? "rgb(245, 245, 245)"
                 : "white",
@@ -47,7 +49,9 @@ function LeftSide() {
           style={{
             backgroundColor:
               activeButton === "button2"
-                ? "#5271FF"
+                ? IsHover === "button2"
+                  ? "#4063fc"
+                  : "#5271FF"
                 : IsHover === "button2"
                 ? "rgb(245, 245, 245)"
                 : "white",
@@ -64,7 +68,9 @@ function LeftSide() {
           style={{
             backgroundColor:
               activeButton === "button3"
-                ? "#5271FF"
+                ? IsHover === "button3"
+                  ? "#4063fc"
+                  : "#5271FF"
                 : IsHover === "button3"
                 ? "rgb(245, 245, 245)"
                 : "white",
@@ -81,7 +87,9 @@ function LeftSide() {
           style={{
             backgroundColor:
               activeButton === "button4"
-                ? "#5271FF"
+                ? IsHover === "button4"
+                  ? "#4063fc"
+                  : "#5271FF"
                 : IsHover === "button4"
                 ? "rgb(245, 245, 245)"
                 : "white",
@@ -98,7 +106,9 @@ function LeftSide() {
           style={{
             backgroundColor:
               activeButton === "button5"
-                ? "#5271FF"
+                ? IsHover === "button5"
+                  ? "#4063fc"
+                  : "#5271FF"
                 : IsHover === "button5"
                 ? "rgb(245, 245, 245)"
                 : "white",
@@ -115,7 +125,9 @@ function LeftSide() {
           style={{
             backgroundColor:
               activeButton === "button6"
-                ? "#5271FF"
+                ? IsHover === "button6"
+                  ? "#4063fc"
+                  : "#5271FF"
                 : IsHover === "button6"
                 ? "rgb(245, 245, 245)"
                 : "white",

@@ -1,5 +1,7 @@
 import Card from "./student-card";
 import image from "../assets/std_icone/std_picture.svg";
+import React, { useEffect } from "react";
+
 function Cards() {
   return (
     <>

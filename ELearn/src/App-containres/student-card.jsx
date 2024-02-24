@@ -1,4 +1,5 @@
 import delet from "../assets/std_icone/delete.svg";
+import { useState } from "react";
 import pen from "../assets/std_icone/pen.svg";
 import SmallButton from "./small_button";
 function Card({ name, img, group, phone }) {
