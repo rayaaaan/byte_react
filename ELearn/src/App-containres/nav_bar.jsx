@@ -5,7 +5,7 @@ function Nav2({toggleContainer}) {
   return (
     <nav className="nav2">
       <h1>Students</h1>
-      <span className="flex-center">
+      <span className="flex-center nav_span">
         <form className="nav_form">
           <div className="search_container">
             <Button icone={scop} clas={"-padding"} img_class={"scop"} />

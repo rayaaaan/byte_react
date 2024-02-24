@@ -4,7 +4,7 @@ import left from "../assets/std_icone/left-arrow.svg";
 import right from "../assets/std_icone/right-arrow.svg";
 import arrow from "../assets/std_icone/arrow.svg";
 
-function YourStudents() {
+function YourStudents({ data, handlOverlay }) {
   const [count, setCount] = useState(1);
   const [state, setState] = useState(1);
   const courses = ["IELTS Prepa", "IELTS Adven", "test 1", "test 2", "test 3"];
@@ -62,7 +62,7 @@ function YourStudents() {
             <h3>Phone number</h3>
           </span>
         </div>
-        <Cards />
+        <Cards data={data} handlOverlay={handlOverlay} />
         <div className="change_std flex-center">
           <button className="change_std_button" onClick={goToPreviousPage}>
             Previous
