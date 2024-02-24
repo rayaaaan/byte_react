@@ -2,7 +2,7 @@ import Card from "./student-card";
 import image from "../assets/std_icone/std_picture.svg";
 import React, { useEffect, useState } from "react";
 
-function Cards({ data, handlOverlay }) {
+function Cards({ data, handlOverlayEdit }) {
   const [cards, setCards] = useState([
     {
       name: "Aissaoui Rayan",
@@ -65,7 +65,7 @@ function Cards({ data, handlOverlay }) {
             phone={card.phone}
             img={card.img}
             clas={card.class}
-            handlOverlay={handlOverlay}
+            handlOverlayEdit={handlOverlayEdit}
           />
         ))}
       </div>

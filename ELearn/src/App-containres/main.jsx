@@ -8,7 +8,6 @@ function Main({ toggleContainer }) {
     lastName: "",
     phone: "",
   });
-  const [Overlay, setOverlay] = useState(false);
   const [data, Setdata] = useState({
     firstName: "",
     lastName: "",
@@ -51,21 +50,24 @@ function Main({ toggleContainer }) {
       alert("false");
     }
   };
-  const handlOverlay = () => {
-    setOverlay(true);
-  };
+
   return (
-    <>
-      <div className={Overlay ? "overlay" : "display_none"}></div>
-      <Nav2 toggleContainer={toggleContainer} />
-      <YourStudents data={data} handlOverlay={handlOverlay} />
-      <AddStudent
-        text="Add new student"
-        handlOnchange={handlOnchange}
-        handlSubmit={handlSubmit}
-        formData={formData}
-      />
-    </>
+  
+      <div className="relative">
+        <Nav2 toggleContainer={toggleContainer} />
+        <YourStudents
+          data={data}
+          handlOnchange={handlOnchange}
+          handlSubmit={handlSubmit}
+          formData={formData}
+        />
+        <AddStudent
+          text="Add new student"
+          handlOnchange={handlOnchange}
+          handlSubmit={handlSubmit}
+          formData={formData}
+        />
+      </div>
   );
 }
 

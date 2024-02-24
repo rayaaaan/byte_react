@@ -1,11 +1,24 @@
 import React from "react";
 import Button from "../landing-page-containres/button";
 import icone from "../assets/Done.svg";
+import exit from "../assets/exit.svg";
 
-function AddStudent({ text, handlOnchange, handlSubmit, formData }) {
+function AddStudent({
+  text,
+  handlOnchange,
+  handlSubmit,
+  formData,
+  button = false,
+  Exit,
+}) {
   return (
     <div className="students-container">
-      <h1 className="add_student_h1">{text}</h1>
+      <div className="flex-center-spacebetween margin-bottum30">
+        <h1 className="add_student_h1">{text}</h1>
+        {button && (
+          <img onClick={Exit} src={exit} alt="" className="hover-pointer" />
+        )}
+      </div>
       <form onSubmit={handlSubmit}>
         <div className="add_form">
           <input
