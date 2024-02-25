@@ -10,6 +10,8 @@ function AddStudent({
   formData,
   button = false,
   Exit,
+  name = '',
+  EditData = ''
 }) {
   return (
     <div className="students-container">
@@ -23,11 +25,11 @@ function AddStudent({
         <div className="add_form">
           <input
             onChange={handlOnchange}
-            name="firstName"
+            name={`firstName${name}`}
             type="text"
             className="Test"
             placeholder="First name"
-            value={formData.firstName}
+            value={name === "Edit" ? EditData.firstName : formData.firstame}
           />
           <input
             onChange={handlOnchange}
@@ -37,11 +39,11 @@ function AddStudent({
           />
           <input
             onChange={handlOnchange}
-            name="lastName"
+            name={`lastName${name}`}
             type="text"
             className="Test"
             placeholder="Last name"
-            value={formData.lastName}
+            value={name === "Edit" ? EditData.lastName : formData.lastNAme}
           />
           <input
             onChange={handlOnchange}
@@ -51,11 +53,11 @@ function AddStudent({
           />
           <input
             onChange={handlOnchange}
-            name="phone"
+            name={`phone${name}`}
             type="number"
             className="Test"
             placeholder="phone number"
-            value={formData.phone}
+            value={name === "Edit" ? EditData.phone : formData.phone}
           />
         </div>
         <div className="flex-end">

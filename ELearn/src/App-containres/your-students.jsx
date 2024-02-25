@@ -4,14 +4,23 @@ import AddStudent from "./add-students";
 import left from "../assets/std_icone/left-arrow.svg";
 import right from "../assets/std_icone/right-arrow.svg";
 import arrow from "../assets/std_icone/arrow.svg";
+import Delete from "./delete";
 
-function YourStudents({ data, handlOnchange, handlSubmit, formData }) {
+function YourStudents({
+  data,
+  handlOnchange,
+  handlSubmit,
+  formData,
+  collectStd,
+  EditData,
+}) {
   const [count, setCount] = useState(1);
   const [state, setState] = useState(1);
   const courses = ["IELTS Prepa", "IELTS Adven", "test 1", "test 2", "test 3"];
   const [Overlay, setOverlay] = useState({
     bool: false,
     edit: false,
+    delete: false,
   });
   function goToNextPage() {
     if (count < 10) {
@@ -42,14 +51,23 @@ function YourStudents({ data, handlOnchange, handlSubmit, formData }) {
   }
   const handlOverlayEdit = () => {
     setOverlay({
+      ...Overlay,
       bool: true,
       edit: true,
+    });
+  };
+  const handlOberlayDeete = () => {
+    setOverlay({
+      ...Overlay,
+      bool: true,
+      delete: true,
     });
   };
   const Exit = () => {
     setOverlay({
       bool: false,
       edit: false,
+      delete: false,
     });
   };
   return (
@@ -71,9 +89,24 @@ function YourStudents({ data, handlOnchange, handlSubmit, formData }) {
             handlOnchange={handlOnchange}
             handlSubmit={handlSubmit}
             formData={formData}
+            EditData={EditData}
             button={true}
             Exit={Exit}
+            name={"Edit"}
           />
+        </div>
+      </div>
+      <div className="relative">
+        <div
+          className={
+            Overlay.bool
+              ? Overlay.delete
+                ? "modal delete"
+                : "display_none"
+              : "display_none"
+          }
+        >
+          <Delete Exit={Exit} />
         </div>
       </div>
       <div className="students_header flex-center">
@@ -99,7 +132,12 @@ function YourStudents({ data, handlOnchange, handlSubmit, formData }) {
             <h3>Phone number</h3>
           </span>
         </div>
-        <Cards data={data} handlOverlayEdit={handlOverlayEdit} />
+        <Cards
+          data={data}
+          handlOverlayEdit={handlOverlayEdit}
+          handlOberlayDeete={handlOberlayDeete}
+          collectStd={collectStd}
+        />
         <div className="change_std flex-center">
           <button className="change_std_button" onClick={goToPreviousPage}>
             Previous

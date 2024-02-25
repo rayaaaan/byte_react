@@ -24,10 +24,15 @@ function Cards() {
       </div>
       <div className="cards">
         <SmallButton icone={left} />
-        <Card image={hover_1} image2={icon_1} text="GENERAL PROGRAM" />
+        <Card image={hover_1} image2={icon_1} text="GENERAL PROGRAM" clas={"flag"}/>
         <Card image={hover_2} image2={icon_2} text="INTENSIVE PROGRAM" />
         <Card image={hover_3} image2={icon_3} text="KIDS PROGRAM" />
-        <Card image={hover_4} image2={icon_4} text="IELTS PROGRAM" />
+        <Card
+          image={hover_4}
+          image2={icon_4}
+          text="IELTS PROGRAM"
+
+        />
         <SmallButton icone={right} />
       </div>
     </>

@@ -2,7 +2,7 @@ import Card from "./student-card";
 import image from "../assets/std_icone/std_picture.svg";
 import React, { useEffect, useState } from "react";
 
-function Cards({ data, handlOverlayEdit }) {
+function Cards({ data, handlOverlayEdit, handlOberlayDeete, collectStd }) {
   const [cards, setCards] = useState([
     {
       name: "Aissaoui Rayan",
@@ -10,27 +10,39 @@ function Cards({ data, handlOverlayEdit }) {
       phone: "0557447485",
       img: image,
       class: "",
+      number: 1,
     },
     {
-      name: "Aissaoui Rayan",
+      name: "Test 1",
       group: "IELTS group 01",
-      phone: "0557447485",
+      phone: "0345464345",
       img: image,
       class: "",
+      number: 2,
     },
     {
-      name: "Aissaoui Rayan",
+      name: "Test 2",
       group: "IELTS group 01",
-      phone: "0557447485",
+      phone: "0557346232",
       img: image,
       class: "",
+      number: 3,
     },
     {
-      name: "Aissaoui Rayan",
+      name: "Test 3",
       group: "IELTS group 01",
-      phone: "0557447485",
+      phone: "0557345645",
       img: image,
       class: "",
+      number: 4,
+    },
+    {
+      name: "Test 3",
+      group: "IELTS group 01",
+      phone: "0557345645",
+      img: image,
+      class: "",
+      number: 5,
     },
   ]);
 
@@ -39,8 +51,9 @@ function Cards({ data, handlOverlayEdit }) {
       handleFormSubmit();
     }
   }, [data.submit]);
-
+  const[Count, SetCount] = useState(5);
   const handleFormSubmit = () => {
+    SetCount(Count+1);
     const updatedCards = [
       {
         name: `${data.firstName} ${data.lastName}`,
@@ -48,6 +61,7 @@ function Cards({ data, handlOverlayEdit }) {
         phone: `${data.phone}`,
         img: image,
         class: "new_card",
+        number: Count,
       },
       ...cards.slice(0, -1),
     ];
@@ -64,8 +78,12 @@ function Cards({ data, handlOverlayEdit }) {
             group={card.group}
             phone={card.phone}
             img={card.img}
-            clas={card.class}
+            clas={`hover-pointer ${card.class}`}
             handlOverlayEdit={handlOverlayEdit}
+            handlOberlayDeete={handlOberlayDeete}
+            onClick={() => {
+              collectStd(card);
+            }}
           />
         ))}
       </div>

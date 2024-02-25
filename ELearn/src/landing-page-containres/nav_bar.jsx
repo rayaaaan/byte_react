@@ -1,7 +1,7 @@
 import Button from "./button";
 import arrow from "C:/Users/OMEN 16/Desktop/React/byte_react/ELearn/src/assets/arrow.png";
 import logo from "../assets/logo.svg";
-function Nav({button_class}) {
+function Nav({ button_class }) {
   return (
     <nav className="nav">
       <div className="nav_div">

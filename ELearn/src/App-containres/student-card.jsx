@@ -2,10 +2,19 @@ import delet from "../assets/std_icone/delete.svg";
 import { useState } from "react";
 import pen from "../assets/std_icone/pen.svg";
 import SmallButton from "./small_button";
-function Card({ name, img, group, phone, clas, handlOverlayEdit }) {
+function Card({
+  name,
+  img,
+  group,
+  phone,
+  clas,
+  handlOverlayEdit,
+  handlOberlayDeete,
+  onClick,
+}) {
   return (
-    <div className={`std_card flex-center ${clas}`}>
-      <span className="flex-center std_name_container">
+    <div className={`std_card flex-center ${clas}`} onClick={onClick}>
+      <span className={`flex-center std_name_container ${clas}`}>
         <img src={img} className="std_image" />
         <h4 className="std_name">{name}</h4>
       </span>
@@ -20,7 +29,11 @@ function Card({ name, img, group, phone, clas, handlOverlayEdit }) {
         </span>
       </span>
       <span className="std_icones flex-center">
-        <SmallButton border={"red-border"} icone={delet} />
+        <SmallButton
+          border={"red-border"}
+          icone={delet}
+          functione={handlOberlayDeete}
+        />
         <SmallButton
           border={"blue-border"}
           icone={pen}
