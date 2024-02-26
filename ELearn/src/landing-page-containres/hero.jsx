@@ -17,7 +17,9 @@ function Hero() {
           odio nec vivamus id gravida. A nisl elit lorem posuere venenatis
           auctor(description 3la platform)
         </p>
-        <Button text="Start Learning" icone={arrow} />
+        <a href="./login" className="text_deco-none">
+          <Button text="Start Learning" icone={arrow} />
+        </a>
       </div>
       <img src={girlimage} alt="girl" className="girl_image" />
     </div>

@@ -19,30 +19,31 @@ function App() {
     setShowContainer(!showContainer);
   };
   function collectStd(card) {
-    if (Std.number === card.number) {
-      toggleContainer();
-    } else if (showContainer === false) {
-      toggleContainer();
+      if (Std.number === card.number) {
+        toggleContainer();
+      } else if (showContainer === false) {
+        toggleContainer();
+      }
+      setStd({
+        name: card.name,
+        email: card.email,
+        phone: card.phone,
+        image: card.img,
+        number: card.number,
+      });
     }
-    setStd({
-      name: card.name,
-      email: card.email,
-      phone: card.phone,
-      image: card.img,
-      number: card.number,
-    });
-  }
+  
   return (
     <div className="app">
       <div className="left_sidebar">
         <LeftSide />
       </div>
       <div className="main">
-        <Main  collectStd={collectStd} />
+        <Main collectStd={collectStd} />
       </div>
       <div className={showContainer ? "right_sidebar" : "display_none"}>
         <Profil
-        user={'Aissaoui Rayan'}
+          user={"Aissaoui Rayan"}
           name={Std.name}
           email={Std.email}
           number={Std.phone}

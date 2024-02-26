@@ -3,7 +3,13 @@ function SmallButton({ border, icone, text, functione }) {
     alert(number);
   }
   return (
-    <button onClick={functione} className={`app_small_button ${border}`}>
+    <button
+      onClick={(event) => {
+        event.stopPropagation();
+        functione();
+      }}
+      className={`app_small_button ${border}`}
+    >
       {text} <img src={icone} alt="" />
     </button>
   );

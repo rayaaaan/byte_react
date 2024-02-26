@@ -11,9 +11,18 @@ function Card({
   handlOverlayEdit,
   handlOberlayDeete,
   onClick,
+  background,
+  number,
 }) {
   return (
-    <div className={`std_card flex-center ${clas}`} onClick={onClick}>
+    <div
+      className={`std_card flex-center no_select ${clas}`}
+      onClick={onClick}
+      style={{
+        backgroundColor:
+          number === background ? "rgb(230, 230, 230)" : "#E8EFF6",
+      }}
+    >
       <span className={`flex-center std_name_container ${clas}`}>
         <img src={img} className="std_image" />
         <h4 className="std_name">{name}</h4>

@@ -2,7 +2,6 @@ import Nav2 from "./nav_bar";
 import YourStudents from "./your-students";
 import { useState } from "react";
 import AddStudent from "./add-students";
-import Delete from "./delete";
 function Main({ collectStd }) {
   const [formData, SetformData] = useState({
     firstName: "",
@@ -19,7 +18,7 @@ function Main({ collectStd }) {
     firstNameEdit: "",
     lastNameEdit: "",
     phoneEdit: "",
-    number:null
+    number: null,
   });
   const handlOnchange = (event) => {
     const { name, value } = event.target;
@@ -66,8 +65,8 @@ function Main({ collectStd }) {
     SetEditData({
       ...EditData,
       number,
-    })
-  }
+    });
+  };
 
   return (
     <div className="relative">

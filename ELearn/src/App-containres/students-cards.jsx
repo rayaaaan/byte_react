@@ -3,6 +3,7 @@ import image from "../assets/std_icone/std_picture.svg";
 import React, { useEffect, useState } from "react";
 
 function Cards({ data, handlOverlayEdit, handlOberlayDeete, collectStd }) {
+  const [CardNum, setCardNum] = useState(null);
   const [cards, setCards] = useState([
     {
       name: "Aissaoui Rayan",
@@ -51,9 +52,9 @@ function Cards({ data, handlOverlayEdit, handlOberlayDeete, collectStd }) {
       handleFormSubmit();
     }
   }, [data.submit]);
-  const[Count, SetCount] = useState(5);
+  const [Count, SetCount] = useState(5);
   const handleFormSubmit = () => {
-    SetCount(Count+1);
+    SetCount(Count + 1);
     const updatedCards = [
       {
         name: `${data.firstName} ${data.lastName}`,
@@ -78,12 +79,21 @@ function Cards({ data, handlOverlayEdit, handlOberlayDeete, collectStd }) {
             group={card.group}
             phone={card.phone}
             img={card.img}
-            clas={`hover-pointer ${card.class}`}
+            number={card.number}
+            clas={`${card.class}`}
             handlOverlayEdit={handlOverlayEdit}
             handlOberlayDeete={handlOberlayDeete}
             onClick={() => {
               collectStd(card);
+              setCardNum((Prev) => {
+                if (Prev === card.number) {
+                  return null;
+                } else {
+                  return card.number;
+                }
+              });
             }}
+            background={CardNum}
           />
         ))}
       </div>

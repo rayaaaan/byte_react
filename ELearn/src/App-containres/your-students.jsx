@@ -22,6 +22,8 @@ function YourStudents({
     edit: false,
     delete: false,
   });
+  const [CardNum, setCardNum] = useState(null);
+
   function goToNextPage() {
     if (count < 10) {
       setCount(count + 1);
@@ -49,12 +51,13 @@ function YourStudents({
       setState(courses.length);
     }
   }
-  const handlOverlayEdit = () => {
+  const handlOverlayEdit = (event, num) => {
     setOverlay({
       ...Overlay,
       bool: true,
       edit: true,
     });
+    setCardNum(num)
   };
   const handlOberlayDeete = () => {
     setOverlay({

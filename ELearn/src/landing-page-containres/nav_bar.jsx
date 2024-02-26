@@ -12,7 +12,9 @@ function Nav({ button_class }) {
           <li className="nav_li">Contact</li>
         </ul>
       </div>
-      <Button text="Get started" clas={button_class} icone={arrow} />
+      <a href="./login" className="text_deco-none">
+        <Button text="Get started" clas={button_class} icone={arrow} />
+      </a>
     </nav>
   );
 }
