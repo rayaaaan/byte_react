@@ -2,7 +2,15 @@ import Card from "./student-card";
 import image from "../assets/std_icone/std_picture.svg";
 import React, { useEffect, useState } from "react";
 
-function Cards({ data, handlOverlayEdit, handlOberlayDeete, collectStd }) {
+function Cards({
+  data,
+  handlOverlayEdit,
+  handlOberlayDeete,
+  collectStd,
+  CollectNumber,
+  EditData,
+  
+}) {
   const [CardNum, setCardNum] = useState(null);
   const [cards, setCards] = useState([
     {
@@ -52,6 +60,19 @@ function Cards({ data, handlOverlayEdit, handlOberlayDeete, collectStd }) {
       handleFormSubmit();
     }
   }, [data.submit]);
+  useEffect(() => {
+    const cardIndex = cards.findIndex(
+      (card) => card.number === EditData.number
+    );
+    if (cardIndex !== -1) {
+      const updatedCards = [...cards];
+      updatedCards[
+        cardIndex
+      ].name = `${EditData.firstNameEdit}${EditData.lastNameEdit}`;
+      updatedCards[cardIndex].phone = EditData.phoneEdit;
+      setCards(updatedCards);
+    }
+  }, [EditData.number]);
   const [Count, SetCount] = useState(5);
   const handleFormSubmit = () => {
     SetCount(Count + 1);
@@ -94,6 +115,7 @@ function Cards({ data, handlOverlayEdit, handlOberlayDeete, collectStd }) {
               });
             }}
             background={CardNum}
+            CollectNumber={CollectNumber}
           />
         ))}
       </div>

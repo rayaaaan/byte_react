@@ -541,6 +541,14 @@ label {
     align-items: center;
 }
 
+.center-vert {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70%;
+}
+
 .flex-start {
     display: flex;
     align-items: center;
@@ -966,4 +974,10 @@ label {
     padding: 0.7rem 2.2rem;
     border: 1px solid #242589;
     color: #242589;
+}
+
+.my_profile_text {
+    color: #EAEAEA;
+    font-size: 1.4rem;
+    font-weight: 500;
 }

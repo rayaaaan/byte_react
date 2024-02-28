@@ -2,7 +2,25 @@ import SmallButton from "./small_button";
 import pen from "../assets/std_icone/pen.svg";
 import delet from "../assets/std_icone/delete.svg";
 import icone from "../assets/not.svg";
-function Profil({ user, name, profile_picture, email, number }) {
+import profil_icone from "../assets/profil_icon.svg";
+function Profil({ user, name, profile_picture, email, number, user_pict }) {
+  if (!name) {
+    return (
+      <div className="profile">
+        <div className="flex-center-spacebetween">
+          <img src={icone} alt="" />
+          <span className="flex-center-gap">
+            <p className="profile_text">{user}</p>
+            <img src={user_pict} alt="" className="small-profile_picture" />
+          </span>
+        </div>
+        <div className="center-vert">
+          <img src={profil_icone} alt="" />
+          <p className="my_profile_text">Select Teacher ...</p>
+        </div>
+      </div>
+    );
+  }
   return (
     <div className="profile">
       <div className="flex-center-spacebetween">

@@ -29,7 +29,7 @@ function AddStudent({
             type="text"
             className="Test"
             placeholder="First name"
-            value={name === "Edit" ? EditData.firstName : formData.firstame}
+            value={name === "Edit" ? EditData.firstName : formData.firstName}
           />
           <input
             onChange={handlOnchange}
@@ -43,7 +43,7 @@ function AddStudent({
             type="text"
             className="Test"
             placeholder="Last name"
-            value={name === "Edit" ? EditData.lastName : formData.lastNAme}
+            value={name === "Edit" ? EditData.lastName : formData.lastName}
           />
           <input
             onChange={handlOnchange}

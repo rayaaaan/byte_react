@@ -1,6 +1,6 @@
 import exit from "../assets/exit.svg";
 import SmallButton from "./small_button";
-function Delete({ Exit }) {
+function Delete({ Exit, DeleteCard }) {
   return (
     <div className="delete">
       <div className="flex-end">
@@ -9,8 +9,8 @@ function Delete({ Exit }) {
       <div className="center">
         <p className="delete_p">Are you sure you wanna delete this user?</p>
         <div className="flex-center-gap margin-bottum30 margin">
-          <SmallButton text="ANNULER" border={" blue"} />
-          <SmallButton text="DELETE" border={" red"} />
+          <SmallButton text="ANNULER" border={" blue"} Exit={Exit} />
+          <SmallButton text="DELETE" border={" red"} DeleteCard={DeleteCard} />
         </div>
       </div>
     </div>

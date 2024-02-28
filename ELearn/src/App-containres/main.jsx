@@ -2,7 +2,7 @@ import Nav2 from "./nav_bar";
 import YourStudents from "./your-students";
 import { useState } from "react";
 import AddStudent from "./add-students";
-function Main({ collectStd }) {
+function Main({ collectStd, onclick_nav }) {
   const [formData, SetformData] = useState({
     firstName: "",
     lastName: "",
@@ -20,6 +20,8 @@ function Main({ collectStd }) {
     phoneEdit: "",
     number: null,
   });
+  const [TempNum, setTempNum] = useState(null);
+  const [DeleteNum, setDeleteNum] = useState(null);
   const handlOnchange = (event) => {
     const { name, value } = event.target;
     SetformData({
@@ -55,22 +57,35 @@ function Main({ collectStd }) {
         lastName: "",
         phone: "",
       });
-      alert("Submit");
     } else {
-      alert("false");
+      if (
+        EditData.firstNameEdit !== "" &&
+        formData.lastNameEdit !== "" &&
+        formData.phoneEdit.length === 10
+      ) {
+        SetEditData({
+          ...EditData,
+          number: TempNum,
+        });
+        alert("Submit");
+        setTempNum(null);
+      } else {
+        alert("false");
+      }
     }
   };
 
   const CollectNumber = (number) => {
-    SetEditData({
-      ...EditData,
-      number,
-    });
+    setTempNum(number);
   };
-
+  const DeleteCard = () => {
+    setDeleteNum(TempNum);
+    console.log(TempNum);
+    setTempNum(null);
+  };
   return (
     <div className="relative">
-      <Nav2 />
+      <Nav2 onclick_nav={onclick_nav} />
       <YourStudents
         data={data}
         handlOnchange={handlOnchange}
@@ -79,6 +94,7 @@ function Main({ collectStd }) {
         collectStd={collectStd}
         EditData={EditData}
         CollectNumber={CollectNumber}
+        DeleteCard={DeleteCard}
       />
       <AddStudent
         text="Add new student"

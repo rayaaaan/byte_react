@@ -13,6 +13,8 @@ function YourStudents({
   formData,
   collectStd,
   EditData,
+  CollectNumber,
+  DeleteCard,
 }) {
   const [count, setCount] = useState(1);
   const [state, setState] = useState(1);
@@ -57,7 +59,7 @@ function YourStudents({
       bool: true,
       edit: true,
     });
-    setCardNum(num)
+    setCardNum(num);
   };
   const handlOberlayDeete = () => {
     setOverlay({
@@ -109,7 +111,7 @@ function YourStudents({
               : "display_none"
           }
         >
-          <Delete Exit={Exit} />
+          <Delete Exit={Exit} DeleteCard={DeleteCard} />
         </div>
       </div>
       <div className="students_header flex-center">
@@ -139,7 +141,9 @@ function YourStudents({
           data={data}
           handlOverlayEdit={handlOverlayEdit}
           handlOberlayDeete={handlOberlayDeete}
+          EditData={EditData}
           collectStd={collectStd}
+          CollectNumber={CollectNumber}
         />
         <div className="change_std flex-center">
           <button className="change_std_button" onClick={goToPreviousPage}>
